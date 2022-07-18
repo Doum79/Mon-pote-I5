@@ -1,0 +1,168 @@
+
+<!-- <ion-content>
+  <div [class]="image" padding>
+    <ion-row padding>
+      <ion-col padding>
+      
+          <ion-row style="justify-content: center">
+              <ion-img style="height: 170px; width: 200px;" src="../../assets/logo-monpote2.png"></ion-img>
+          </ion-row>
+            
+
+      <ion-card class="transparent2">
+        <p style="text-align: center; font-size: x-large; color: #000;">CONNECTER VOUS !</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <ion-list>
+
+                <ion-card class="transparent">
+                  <ion-item class="transparent">
+                      <ion-icon color="primary" name="person-add" slot="start"></ion-icon>
+                    <ion-input class="transparent" color="primary" value="{{email}}" formControlName="email" placeholder="Email" type="email" id="email">
+                    </ion-input>
+                  </ion-item>
+                </ion-card>
+
+              
+                <ion-card class="transparent">
+                  <ion-item class="transparent">
+                      <ion-icon color="primary" name="lock" slot="start"></ion-icon>
+                    <ion-input class="transparent" color="primary" formControlName="password" placeholder="Mot de passe" type="password" id="password">
+                    </ion-input>
+                  </ion-item>
+                </ion-card>
+
+                <h6  padding text-right (click)="forgetForm()"  style="color:#000; font-size: 13px; font-variant:small-caps;">mot de passe oublié ?</h6>
+    
+            </ion-list>
+    
+            <ion-row>
+                <ion-col text-center>
+                    <ion-button fill="outline" shape="round"  color="primary" [disabled]="!loginForm.valid" type="submit">CONNEXION</ion-button>
+                    <h6 text-center style="color:#000; font-size: 16px">Vous n'avez pas de compte ? <hr><strong [routerLink]="['/number']">Enregistrer vous</strong></h6>
+                    
+                </ion-col>
+            </ion-row>
+    
+        </form>
+      </ion-card>
+    </ion-col>
+    </ion-row>
+  </div>
+</ion-content> -->
+
+
+<!-- <ion-content>
+  <div [class]="image" padding>
+    <ion-row padding>
+      <ion-col padding>
+      
+          <ion-row style="justify-content: center">
+              <ion-img style="height: 170px; width: 200px;" src="../../assets/logo-monpote2.png"></ion-img>
+          </ion-row>
+            
+
+        <p no-margin style="text-align: center; font-size:smaller; color: #000;">CONNECTEZ-VOUS !</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <ion-list class="transparent">
+              
+
+
+                <ion-item class="transparent">
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-icon color="primary" name="mail" slot="start"></ion-icon>
+                    <ion-input  name="" type="email">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item class="transparent">
+                    <ion-label position="floating">Mot de passe</ion-label>
+                    <ion-icon color="primary" name="ios-key" slot="start"></ion-icon>
+                    <ion-input  name="passord" type="password" >
+                    </ion-input>
+                </ion-item>
+
+
+
+                <h6  padding text-right (click)="forgetForm()"  style="color:#000; font-size: 13px; font-variant:small-caps;">mot de passe oublié ?</h6>
+    
+            </ion-list>
+    
+            <ion-row>
+                <ion-col text-center>
+                    <ion-button fill="outline" shape="round"  color="primary"  type="submit">CONNEXION</ion-button>
+                    <h6 text-center style="color:#000; font-size: 16px">Vous n'avez pas de compte ? <hr><strong [routerLink]="['/number']">Enregistrer vous</strong></h6>
+                    
+                </ion-col>
+            </ion-row>
+    
+        </form>
+    </ion-col>
+    </ion-row>
+  </div>
+</ion-content> -->
+
+<ion-content scroll-y="false">
+    <div>
+
+      <ion-row style="justify-content: center">
+        <ion-img style="width: 120px; margin-top: 40px;" src="../../assets/icon/logo.png"></ion-img>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center full-width">
+        <ion-card style="width: 67vw; max-width: 300px; height: 70vw; max-height: 245px;">
+          <p style="text-align: center; font-size: 12px; color: #000;">CONNECTEZ-VOUS !</p>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+  
+              <ion-list no-margin>
+                
+                  <ion-item class="transparent">
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-icon color="primary" name="mail" slot="start"></ion-icon>
+                    <ion-input  name="" type="email" formControlName="email">
+                    </ion-input>
+                  </ion-item>
+
+                  <ion-item class="transparent">
+                    <ion-label position="floating">Mot de passe</ion-label>
+                    <ion-icon color="primary" name="key" slot="start"></ion-icon>
+                    <ion-icon name="eye" (click)="changeTypePassxord()" slot="end" style="margin-top: 20px;"></ion-icon>
+                    <ion-input  name="passord" [type]="typePassword" formControlName="password">
+                    </ion-input>
+                  </ion-item>
+  
+                <h6 (click)="forgetForm()"  style="color:#000; font-size: 13px; font-variant:small-caps; text-align: end; padding-right: 8px;">mot de passe oublié ?</h6>
+      
+              </ion-list>
+      
+          </form>
+        </ion-card>
+      </ion-row>
+
+        <ion-row style="justify-content: center;">
+          <ion-button shape="round" color="primary" type="submit" (click)="login()">CONNEXION</ion-button>
+        </ion-row>
+       
+    </div>
+      <!-- <ion-toolbar>ekfhbzehfbaze fafjnaf afjenfajfehfbaebf </ion-toolbar> -->
+    <!-- <img src="../../assets/img/bottom.png" width="100%" alt=""> -->
+      <!-- <ion-item class="bottom" >
+        <strong text-end  style="color:rgb(82, 81, 81); height: 5px !important; font-size: 14px; bottom: 3px; font-family:sans-serif; margin: auto; margin-top: 15px"  [routerLink]="['/number']">
+          <ion-text style="margin-left: 200px;" [routerLink]="['/number']"> Enregistrez Vous ici</ion-text>
+        </strong>
+        <ion-icon name="md-arrow-round-forward" style="zoom: 1.2" [routerLink]="['/number']"></ion-icon>
+      </ion-item> -->
+
+      <ion-toolbar class="bottom">
+        <ion-text slot="end" [routerLink]="['/number']">Enregistrez Vous ici</ion-text> <ion-icon style="zoom: 2;" slot="end" name="arrow-forward" [routerLink]="['/number']"></ion-icon>
+      </ion-toolbar>
+
+  </ion-content>
+
+  <ion-footer>
+    <!-- <ion-toolbar>
+      <ion-text slot="end">Enregistrez Vous ici</ion-text>
+    </ion-toolbar>
+  </ion-footer> -->
+

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Votre panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <ion-card>
+    <ion-card-content *ngIf="showEmptyCartMessage">
+      Il n'y a pas de produits dans votre panier!
+    </ion-card-content>
+    <ion-list *ngIf="!showEmptyCartMessage" no-padding>
+      <ion-item *ngFor="let item of cartItems; let i = index">
+        <ion-thumbnail slot="start">
+          <img [src]="item.product.picture" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{item.product.title}}</h3>
+          <strong>{{item.amount.toFixed(2)}} pts</strong>
+          <div>
+            <ion-icon name="remove-circle" style="font-size:25px" color="primary" (click)="changeQty(item, i, -1)">
+            </ion-icon>
+
+            <div style="display: inline;padding: 10px;">{{item.qty}}</div>
+
+            <ion-icon name="add-circle" style="font-size:25px" color="primary" (click)="changeQty(item, i, 1)">
+            </ion-icon>
+
+          </div>
+        </ion-label>
+        <ion-button sfill="outline" slot="end" (click)="removeFromCart(item, i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+  <br>
+  <ion-card *ngIf="!showEmptyCartMessage">
+
+      <ion-item>
+          <ion-label>
+            Sous Total
+          </ion-label>
+          <ion-text  slot="end" >
+              {{total.toFixed(2)}} pts
+          </ion-text>
+        </ion-item>
+
+      <ion-item>
+          <ion-label>
+            Livraison
+          </ion-label>
+          <ion-text  slot="end" >
+              {{livraison}} pts
+          </ion-text>
+        </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Total
+      </ion-label>
+      <ion-text  slot="end" >
+          {{ (total + livraison).toFixed(2)}} pts
+      </ion-text>
+    </ion-item>
+  </ion-card>
+
+  <br>
+ 
+  <ion-card *ngIf="!showEmptyCartMessage" [routerLink]="'/checkout'" >
+    <ion-card-header text-center color="primary">
+      <strong>PASSER LA COMMANDE</strong>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

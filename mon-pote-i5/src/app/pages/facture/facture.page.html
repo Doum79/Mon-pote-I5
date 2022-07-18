@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-row style=" height: 100px; justify-content: center; padding: 40px;">
+      <ion-icon name="md-card"  style="zoom: 3; margin-top: -5px;"></ion-icon>
+      <b style="font-size: 16px">Payer ma facture</b> <span style=" margin-top: 7px; font-size: 10px">(CIE, SODECI, CANAL)</span>
+    </ion-row>
+    <ion-row style="background-color: black; color: white;" padding>
+      <b>Utiliser vos avoirs pour payer vos facture CIE, SODECI et CANAL</b> 
+    </ion-row>
+    <ion-row style=" background-color:  #993399; padding: 3px; justify-content: center;">
+      <b style=" font-size: 16px">Selectionner votre service</b>
+    </ion-row>
+    <div text-center padding>
+      
+      <ion-row class="ion-justify-content-center" style="margin-top: 10px;">
+        <img src="../../assets/CIE.jpg" (click)="presentAlertPrompt('CIE')" alt="" height="110px%" width="170px%" margin>
+      </ion-row>
+      <hr class="hr">
+      <ion-row class="ion-justify-content-center">
+        <img src="../../assets/sodeci.png" (click)="presentAlertPrompt('SODECI')" alt="" height="110px%" width="170px%" margin>
+      </ion-row>
+      <hr  class="hr">
+      <ion-row class="ion-justify-content-center">
+        <img src="../../assets/canal.png" (click)="CanalPrompt('CANAL')" alt="" height="110px%" width="120px%" margin>
+      </ion-row>
+
+    </div>
+
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button size="small" [routerLink]="['/tabs']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

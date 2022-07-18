@@ -1,0 +1,52 @@
+<ion-content>
+    <ion-row style="background-color: #993399; height: 100px; justify-content: center; padding: 40px;">
+    <b style="font-size: 16px">Achats de bien et service</b>
+    </ion-row>
+
+    <ion-row style="background-color: black; color: white; " padding>
+      <b >Faites vos Achats dans les boutiques, magasins, supermarchés, pharmacies...</b> 
+    </ion-row>
+
+    <ion-card padding text-center>
+      <div>
+        <ion-card-subtitle text-center>
+          Entrer le code de la caisse
+        </ion-card-subtitle>
+        <ion-card-content>
+          <ion-item>
+          <ion-icon name="call"></ion-icon>
+          <input color="primary" [(ngModel)]="number" maxlength="8" type="tel" placeholder="code">
+        </ion-item>
+        </ion-card-content>
+      </div>
+      <div>
+        <ion-card-subtitle text-center>
+          Entrer le montant à envoyer
+        </ion-card-subtitle>
+        <ion-card-content>
+          <ion-item>
+          <ion-icon name="cash"></ion-icon>
+          <input color="primary" [(ngModel)]="account" type="number" maxlength="4" placeholder="montant">
+        </ion-item>
+        </ion-card-content>
+      </div>
+      <div class="ion-text-center">
+        <ion-button style="margin-top: 4%" (click)="transfAvoir(number, account)">Valider</ion-button>
+      </div>
+ 
+    </ion-card>
+
+
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button size="small" [routerLink]="['/choix']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+   
+</ion-content>
+<ion-footer>
+  <div style="text-align: center;">
+    <img src="../../assets/ScantimeSrs.png" alt="" style="height: 100px;" (click)="qrscan()">
+  </div>
+</ion-footer>

@@ -1,0 +1,57 @@
+
+<ion-content>
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" [routerLink]="['/login']">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    <ion-row padding>
+      <ion-col padding>
+        <div style="text-align: center; font-family: serif; font-size: 27px; color: white; margin-top: -34px;">
+          <p>Bienvenu dans l'espace Marchand</p>
+        </div>
+        <!-- <ion-thumbnail slot="start"> -->
+          <div style="margin-left: 20%">
+              <ion-img style="height: 170px; width: 200px;" src="../../assets/icon.png"></ion-img>
+          </div>
+            
+        <!-- </ion-thumbnail> -->
+  
+        <form [formGroup]="loginForm"  (ngSubmit)="login()">
+  
+            <ion-list    style="background-color: #993399">
+  
+                <ion-card>
+                  <ion-item>
+                      <ion-icon color="primary" name="person-add" slot="start"></ion-icon>
+                    <ion-input color="primary" value="{{email}}" formControlName="email" placeholder="Email" type="email" id="email">
+                    </ion-input>
+                  </ion-item>
+                </ion-card>
+  
+               
+                <ion-card>
+                  <ion-item>
+                      <ion-icon color="primary" name="lock" slot="start"></ion-icon>
+                    <ion-input color="primary" formControlName="password" placeholder="Mot de passe" type="password" id="password">
+                    </ion-input>
+                  </ion-item>
+                </ion-card>
+  
+                <h6  padding text-right (click)="forgetForm()"  style="color:#fff; font-size: 13px">Mot de passe oublié</h6>
+    
+            </ion-list>
+    
+            <ion-row>
+                <ion-col text-center>
+                      <!-- <ion-button color="light" fill="clear" shape="full" (click)="forgetForm()" >Mot de passe oublié</ion-button> -->
+                    <ion-button  shape="round"  color="light" [disabled]="!loginForm.valid" type="submit">CONNEXION</ion-button>
+                    
+                </ion-col>
+            </ion-row>
+    
+        </form>
+    </ion-col>
+    </ion-row>
+  </ion-content>
+  

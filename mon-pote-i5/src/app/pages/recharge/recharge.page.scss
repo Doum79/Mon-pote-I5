@@ -1,0 +1,28 @@
+@keyframes fivePhasesFadeIn {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fivePhasesFadeIn {
+    animation-name: fivePhasesFadeIn;
+    animation-duration: 4s;
+  }
+
+  hr{
+    background-color: black;;
+    width: 75%;
+    opacity: 0.2;
+  }

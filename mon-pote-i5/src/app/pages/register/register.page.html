@@ -1,0 +1,56 @@
+
+<ion-content>
+    <div padding no-padding-top class="ion-text-center ion-justify-content-center">
+      <!-- <ion-thumbnail slot="start"> -->
+        <ion-row style="justify-content: center">
+          <ion-img style="width: 120px; margin-top: 35px;" src="../../assets/icon/logo.png"></ion-img>
+        </ion-row>
+      <!-- </ion-thumbnail> -->
+
+      <form [formGroup]="registerForm" style="max-width: 500px; justify-content: center">
+
+          <ion-list>
+
+              <ion-card class="transparent" >
+                <ion-item class="transparent">
+                    <ion-icon color="primary" name="person-add" slot="start"></ion-icon>
+                  <ion-input class="transparent" color="primary" formControlName="nom" placeholder="Nom et prenoms" type="text" id="nom">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+
+              <ion-card class="transparent">
+                <ion-item class="transparent">
+                    <ion-icon color="primary" name="call" slot="start"></ion-icon>
+                  <ion-input class="transparent" color="primary" disabled="true" formControlName="number" value="{{number}}"  type="number" id="number">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+
+              <ion-card class="transparent">
+                <ion-item class="transparent">
+                    <ion-icon color="primary" name="ios-mail" slot="start"></ion-icon>
+                  <ion-input class="transparent" color="primary" formControlName="email" placeholder="Email" type="email" id="email">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+              
+              <ion-card class="transparent">
+                <ion-item class="transparent">
+                    <ion-icon color="primary" name="lock" slot="start"></ion-icon>
+                  <ion-input class="transparent" color="primary" formControlName="password" placeholder="Password" type="password" id="password">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+
+                <ion-checkbox formControlName="isChecked" id="isChecked" checked="false" color="success" ></ion-checkbox> &nbsp;
+                <span>J'accepte les conditions d'utilisation</span>  
+          </ion-list>
+          <div class="ion-text-center">
+            <ion-button  shape="round"  color="light" (click)="register()" [disabled]="!registerForm.value.isChecked || !registerForm.valid" type="submit">S'enregistrer</ion-button>
+          </div>
+
+        </form>
+    </div>
+  </ion-content>
+  

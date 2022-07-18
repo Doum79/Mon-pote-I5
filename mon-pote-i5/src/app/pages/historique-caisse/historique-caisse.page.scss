@@ -1,0 +1,23 @@
+ion-card{
+    --background: #FCF8CC;
+
+    ion-card-title{
+        font-size: 18px
+    }
+    ion-card-content{
+        p{
+            font-size: 14px
+        }
+        
+    }
+    
+}
+
+.bottom-bar{
+    padding: 5px;
+    width: 100%;
+    background-color: #993399;
+    position: fixed;
+    bottom: 0px;
+    font-family: sans-serif;
+}

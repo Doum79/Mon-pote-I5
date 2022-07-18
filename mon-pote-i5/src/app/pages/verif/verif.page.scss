@@ -1,0 +1,21 @@
+ion-content{
+    --background : #993399
+}
+ion-list{
+    background: transparent;
+    //border: 2px solid;
+    //border-radius: 2%;
+}
+
+ion-card{
+    border-radius: 30px;
+}
+
+.transparent{
+    --background-color: #ffffff;
+    opacity: 0.8;
+}
+ion-content{
+    --color: #fff;
+    --background: #fff url(../../../assets/bg.jpg) no-repeat center center / cover;
+}

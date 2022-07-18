@@ -1,0 +1,80 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Prix conseillés du marché</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" [routerLink]="['/tabs']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-row style="background-color: #993399; height: 100px; justify-content: center; padding: 40px;">
+    <b style=" font-size: 16px">Prix conseillés du marché</b> 
+  </ion-row>
+
+  <!-- <ion-card style="height: 17%;">
+    <ion-row>
+      <ion-col size="2">
+        <ion-icon name="md-arrow-round-up" *ngIf="a.type == 'DEBIT'"  style="zoom: 3; margin-top: 27%; color: red; margin-left: 9%;"></ion-icon>
+        <ion-icon name="md-arrow-round-down" *ngIf="a.type == 'CREDIT'"  style="zoom: 3; margin-top: 27%; color: green; margin-left: 9%;"></ion-icon>
+      </ion-col>
+      <ion-col size="10" size-sm>
+          <p no-margin> <b>Motif: </b> {{a.description}}</p>
+          <p style="margin-top: 0.1"> <b>Montant: </b>{{a.account}} fr</p>
+          <p no-margin> <b>Date: </b> {{a.updated_at | date: "dd-MM-yyyy H:mm"}}</p>
+      </ion-col>
+      <ion-col size="2">
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon name="md-arrow-round-up" *ngIf="a.type == 'DEBIT'"  style="zoom: 3; margin-top: 27%; color: red; margin-left: 9%;"></ion-icon>
+        <ion-icon name="md-arrow-round-down" *ngIf="a.type == 'CREDIT'"  style="zoom: 3; margin-top: 27%; color: green; margin-left: 9%;"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+
+
+  <p margin color="primary" style="font-size: 23px; text-align: center"> <b>Quelques indications</b>  </p>
+  <ion-card style="height: 20%">
+    <ion-row padding>
+      <ion-col>
+        <img src="https://ci.jumia.is/4z7wG6E2bPO_rTozmbSEVBy_tZo=/fit-in/220x220/filters:fill(white):sharpen(1,0,false):quality(100)/product/40/81123/1.jpg?1357" alt="">
+      </ion-col>
+      <ion-col size="9" size-sm>
+          Le sac de riz RIZIERE 25kg est a  8500 fr  dans tous les supermarché BON PRIX
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card style="height: 20%;">
+    <ion-row padding>
+      <ion-col>
+        <img src="http://www.sipra.ci/images/oeuf-frais.jpg" alt="">
+      </ion-col>
+      <ion-col size="9" size-sm>
+          La plaquette d'ouf est maintenant à 1500fr dans tous les points de ventes COQUIVOIRE
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  
+  <ion-card style="height: 20%;">
+    <ion-row padding>
+      <ion-col>
+        <img src="https://www.letelegramme.fr/ar/imgproxy.php/images/2016/07/14/la-station-total-du-poteau-vert-est-fermee-depuis-quelques_2993866.jpg?article=20160714-1011147601&aaaammjj=20160714" alt="">
+      </ion-col>
+      <ion-col size="9" size-sm>
+          L'éssence est passé à 500fr/L dans toutes les stations TOTAL
+      </ion-col>
+    </ion-row>
+  </ion-card> 
+
+
+
+
+  <img src="https://cnlvc.ci/wp-content/uploads/2019/09/cnlvc-couts_moyen_des_produits_vivriers_fraismanufactures_des_marches_abidjan-22-29septembre2019-01.jpg" alt="">
+
+  
+</ion-content>

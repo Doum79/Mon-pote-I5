@@ -1,0 +1,205 @@
+<ion-content>
+  <div [class]="image" padding text-center style="height: 27%;">
+      <!-- <ion-chip style="background-color: #993399; margin-top: 20%; width: 216px; height: 50px; opacity: 0.9;">
+          <ion-icon color="dark" name="ios-cash"></ion-icon>
+          <h3>Solde: 100000 fr</h3>
+      </ion-chip> -->
+  </div>
+
+  <!-- <ion-row style="height: 124px; border: 2px;" class="row1">
+    <ion-col style="height: -webkit-fill-available;">
+      <qrcode [qrdata]="resStorage.data.phone" [size]="116" [level]="'M'"></qrcode>
+    </ion-col>
+    <ion-col style="padding-top: 42px; height: -webkit-fill-available">
+      <b style="font-size: 16px; font-family:fantasy">Mon Solde: <br>
+      <b style="font-size: 26px; font-family:initial"> {{soldeB}} pts</b></b> 
+    </ion-col>
+  </ion-row> -->
+
+
+
+
+  <ion-row style="height: 30vw;" class="row1">
+    <ion-col>
+      <div style="border-radius:50%; background-color: #993399; width: 27vw; height: 27vw; text-align: center; margin-left: 1vw; margin-top: 1vw;">
+        <img src="../../assets/pp.png" style="width:25vw; height:25vw" alt="">
+      </div>
+    </ion-col>
+
+    <ion-col style="padding-top: 7vw; font-size: 5vw;">
+      {{nom}}
+    </ion-col>
+
+    <ion-col style="justify-content: center; margin-top: 7vw;" size="4.5">
+      <div style="background-color: #993399; height: 12vw; width: 30vw; color: white; border-radius: 15vw; text-align: center; padding-top: 4vw; font-weight: 600; font-size: 4vw;" (click)="voirSolde()">
+        MON SOLDE
+      </div>
+      <!-- <b style="font-size: 16px; font-family:fantasy">Mon Solde: <br>
+      <b style="font-size: 26px; font-family:initial"> 10000 pts</b></b>  -->
+    </ion-col>
+  </ion-row>
+
+
+  <div class="row2">
+ 
+  <ion-row style="text-align: center; margin-top: 6px;"  shape="full" expand="block">
+
+    <ion-col class="bloc" [routerLink]="['/choix']">
+     <div text-center> <ion-icon name="send" style="zoom: 2.5; color: white;"></ion-icon></div>
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Réutiliser vos avoirs</b> 
+    </ion-col>
+
+    <!-- <ion-col class="bloc" [routerLink]="['/recharge']">
+      <div><ion-icon name="phone-portrait"  style="zoom: 2.5; color: white"></ion-icon></div> 
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Achat de recharge tout réseau</b>  
+    </ion-col> -->
+
+    <ion-col class="bloc" [routerLink]="['/tab2']">
+      <div><ion-icon src="../../../assets/arrow.svg" style="zoom: 2.5; color: white"></ion-icon></div> 
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Historique des transactions</b>  
+    </ion-col>
+   
+  </ion-row>
+
+  <ion-row style="text-align: center;"  shape="full" expand="block">
+<!-- <ion-col class="bloc" [routerLink]="['/facture']">
+      <div><ion-icon name="card"  style="zoom: 2.5; margin-top: 3%;  margin-left: 3%; color: white"></ion-icon></div> 
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Payer ma facture</b> <p no-margin><span style="font-size: 3vw; color: white">(CIE, SODECI, CANAL)</span></p> 
+    </ion-col>
+
+    <ion-col class="bloc" [routerLink]="['/monney']">
+      <div text-center> <ion-icon name="share"  style="zoom: 2.5; margin-top: 3%;  margin-left: 3%; color: white"></ion-icon></div>
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Transferts vers mobile monney</b>  
+    </ion-col> -->
+
+    <ion-col class="bloc" [routerLink]="['/tab3']">
+      <div><ion-icon name="card"  style="zoom: 2.5; margin-top: 3%;  margin-left: 3%; color: white"></ion-icon></div> 
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">Prix conseillés du marché</b>
+    </ion-col>
+
+    <ion-col class="bloc" [routerLink]="['/shop']">
+      <div text-center> <ion-icon name="cart"  style="zoom: 2.5; margin-top: 3%;  margin-left: 3%; color: white"></ion-icon></div>
+      <b style="margin-left: 5px; margin-top: 20px; font-size: 5vw; color: white">e-commerce</b>  
+    </ion-col> 
+    
+  </ion-row>
+
+  </div>
+  <!-- <ion-row style="background-color: #993399; height: 80px;">
+    <ion-icon name="md-at"  style="zoom: 3; margin-top: 3%;  margin-left: 3%;"></ion-icon>
+    <b style="margin-left: 5px; margin-top: 25px; font-size: 16px; color: white">Achat de pass internet</b>  
+  </ion-row>
+  <ion-row style=" height: 80px;">
+    <ion-icon name="md-book"  style="zoom: 3; margin-top: 3%;  margin-left: 3%;"></ion-icon>
+    <b style="margin-left: 5px; margin-top: 25px; font-size: 16px">Actualité Côte d'ivoire</b>  
+  </ion-row> -->
+  
+  <!-- <ion-row style="background-color: #993399; height: 80px;">
+    <ion-icon name="md-call"  style="zoom: 3; margin-top: 3%;  margin-left: 3%;"></ion-icon>
+    <b style="margin-left: 5px; margin-top: 25px; font-size: 16px;  color: white">Discuter avec un conseillé</b>  
+  </ion-row> -->
+     <!-- <ion-card color="primary" no-margin>
+        <ion-slides style="width:100%; height:45% ">
+            <ion-chip style="background-color: #993399; margin-top: 20%">
+                <ion-icon color="danger" name="pin"></ion-icon>
+                <h3>Solde: 0 fr</h3>
+            </ion-chip>
+            <ion-slide>
+                  <img src="../../assets/money-shutterstock.jpg">
+            </ion-slide>
+            <ion-slide>
+                    <img src="../../assets/probleme-monnaie-franc-cfa-cameroun-chateaunews-com.jpg">
+            </ion-slide>
+            <ion-slide>
+                    <img src="../../assets/_107974801_01cfa05.jpg">
+            </ion-slide>
+          </ion-slides>
+           
+    </ion-card> -->
+
+       <!--   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="Loading more data...">
+
+              <ion-list>
+
+                  <ion-item *ngFor="let item of data" >
+                    <div>
+                        <ion-item>
+                          <ion-avatar slot="start">
+                              <img src="https://img.icons8.com/color/500/000000/user.png">
+                            </ion-avatar>
+                            <ion-label>Modest Kouassi</ion-label>
+                              <ion-icon name="more" color="primary" slot="end"></ion-icon>
+                        </ion-item>
+                      
+                        <ion-card-content>
+                            L'écologie ou écologie scientifique, parfois assimilée à la bioécologie ou à la bionomie, est une science qui étudie les êtres vivants dans leur milieu en tenant compte de leurs interactions.
+                          <hr>
+                        <img src="assets/img/ecolo-post1.jpg">
+                        </ion-card-content>
+
+                        <ion-item>
+                            <ion-icon name="heart-empty" color="primary" slot="start"></ion-icon>
+                            <ion-icon name="share-alt" color="primary" slot="start"></ion-icon>
+                                <ion-icon name="bookmark" color="primary" slot="end"></ion-icon>
+                          </ion-item>
+                      </div>
+                  </ion-item>
+
+
+                  <ion-item *ngFor="let item of data" >
+                      <div>
+                          <ion-item>
+                            <ion-avatar slot="start">
+                                <img src="https://img.icons8.com/color/500/000000/user.png">
+                              </ion-avatar>
+                              <ion-label>Modest Kouassi</ion-label>
+                                <ion-icon name="more" color="primary" slot="end"></ion-icon>
+                          </ion-item>
+                        
+                          <ion-card-content>
+                              L'écologie ou écologie scientifique, parfois assimilée à la bioécologie ou à la bionomie, est une science qui étudie les êtres vivants dans leur milieu en tenant compte de leurs interactions.
+                            <hr>
+                          <img src="assets/img/ecolo-post1.jpg">
+                          </ion-card-content>
+  
+                          <ion-item>
+                              <ion-icon name="heart-empty" color="primary" slot="start"></ion-icon>
+                              <ion-icon name="share-alt" color="primary" slot="start"></ion-icon>
+                                  <ion-icon name="bookmark" color="primary" slot="end"></ion-icon>
+                            </ion-item>
+                        </div>
+                    </ion-item>
+                
+              </ion-list>
+
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll> -->
+  <!-- <ion-row style="bottom: 3px; margin: 2px;">
+    <ion-icon color="primary" style="zoom: 2;" name="md-settings"></ion-icon>
+  </ion-row>
+</ion-content> -->
+<!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button size="small" (click)="Deconexionpermission()">
+    <ion-icon name="md-power"></ion-icon>
+  </ion-fab-button>
+</ion-fab> -->
+<ion-row style="bottom: 0; padding: 4px; justify-content: center; right: 0; left: 0; position: fixed;">
+  <img src="../../assets/logoQR.png" alt="" class="img" style="height: 76px;" (click)="openQR()">
+</ion-row> 
+
+</ion-content>
+
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button size="small" color="light" >
+    <ion-icon name="settings" color="primary" style="zoom: 1.4;"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="bottom" style="margin-top: 53px;">
+    <ion-fab-button style="height: 32px; width: 32px;" [routerLink]="['/tab5']"><ion-icon name="person" color="primary"></ion-icon></ion-fab-button>
+    <ion-fab-button style="height: 32px; width: 32px;" [routerLink]="['/help']"><ion-icon name="help" color="primary"></ion-icon></ion-fab-button>
+    <!-- <ion-fab-button style="height: 32px; width: 32px;"><ion-icon name="ios-information-circle-outline" color="primary"></ion-icon></ion-fab-button> -->
+    <ion-fab-button color="primary" style="height: 32px; width: 32px;"><ion-icon name="power" (click)="Deconexionpermission()" color="light"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

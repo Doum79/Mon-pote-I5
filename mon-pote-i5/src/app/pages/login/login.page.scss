@@ -1,0 +1,67 @@
+// ion-content{
+//     --background : #FEF4FF
+//     --background: linear-gradient(45deg, rgb(244, 214, 255), rgb(255, 217, 167));
+// }
+
+ion-content {
+    --background: linear-gradient(rgb(212, 181, 250), rgb(144, 201, 255));
+}
+
+ion-list{
+    background: transparent;
+    //border: 2px solid;
+    //border-radius: 2%;
+}
+
+ion-card{
+    border-radius: 30px;
+    margin-top: 45px; 
+    background-color: white; 
+    opacity: 0.8;
+    width: 300px;
+}
+
+.image1{
+    background: #000 url(../../../assets/img/APL/franc-cfa.jpg) no-repeat center center / cover;
+    height: 100%;
+    
+}
+
+.image2{
+    background: #000 url(../../../assets/img/APL/p201702231221522392_0.jpg) no-repeat center center / cover;
+    height: 100%;
+    
+}
+
+
+.image3{
+    background: #000 url(../../../assets/img/APL/monnaie.jpg) no-repeat center center / cover;
+    height: 100%;
+    
+}
+
+.transparent{
+    --background-color: #ffffff;
+    opacity: 0.8;
+    justify-content: center;
+    // margin: 4px;
+}
+
+.transparent2{
+    background-color: #ffffff;
+    // opacity: 0.5;
+    border: solid black
+}
+.bottom{
+    --background: transparent;
+    // opacity: 0.6;
+    width: 100%;
+    color:rgb(102, 100, 100); 
+    position: fixed;
+    bottom: 0px; 
+    font-size: 12px;
+}
+
+.full-width{
+    width: 100%;
+}

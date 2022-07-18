@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="primary" padding>
+      <ion-icon color="light" style="zoom: 2" name="arrow-back" slot="start" (click)="gotogerant()"></ion-icon>
+    <ion-title text-center>CAISSE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+  
+        <ion-list padding>
+
+            <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="md-list-box" slot="start"></ion-icon>
+                <ion-input color="primary" [(ngModel)]="modifcaisse.name" name="modifcaisseName"  placeholder="Libellé de caisse" type="text" id="nom">
+                </ion-input>
+              </ion-item>
+            </ion-card>
+
+            <!-- <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="md-barcode" slot="start"></ion-icon>
+                <ion-input color="primary" placeholder="Numéro de caisse" type="number" id="number">
+                </ion-input>
+              </ion-item>
+            </ion-card> -->
+
+            <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="md-remove-circle" slot="start"></ion-icon>
+                <ion-input color="primary" [(ngModel)]="modifcaisse.sold_limite" name="modifcaisselimite" placeholder="Limite" type="number" id="Limite">
+                </ion-input>
+              </ion-item>
+            </ion-card>
+
+            <ion-card *ngIf="!aucuneCaissiere">
+              <ion-list>
+                <ion-item>
+                    <ion-icon color="primary" name="person" slot="start"></ion-icon>
+                  <ion-label>Caissière</ion-label>
+                  <ion-select [(ngModel)]="modifcaisse.users_id" name="users_id">
+                    <ion-select-option *ngFor="let b of resultatGetCaissiere" value="{{b.id}}">{{b.name}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+            </ion-card>
+
+        </ion-list>
+
+        <ion-list padding *ngIf="addCaiss">
+
+            <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="person-add" slot="start"></ion-icon>
+                <ion-input color="primary" [(ngModel)]="InfoCaissiere.name" name="namecaissiere"  placeholder="Nom & prénom de la caissière" type="text" id="nom">
+                </ion-input>
+              </ion-item>
+            </ion-card>
+
+            <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="call" slot="start"></ion-icon>
+                <ion-input color="primary" [(ngModel)]="InfoCaissiere.phone" name="conatctcaissiere" placeholder="Contact caissière" type="tel" id="Contact">
+                </ion-input>
+              </ion-item>
+            </ion-card>
+
+            <ion-card>
+              <ion-item>
+                  <ion-icon color="primary" name="ios-mail" slot="start"></ion-icon>
+                <ion-input color="primary" [(ngModel)]="InfoCaissiere.email" name="emailcaissiere" placeholder="Email caissière" type="email" id="email">
+                </ion-input>
+              </ion-item>
+            </ion-card>
+
+            <ion-card>
+                <ion-item>
+                    <ion-icon color="primary" name="md-keypad" slot="start"></ion-icon>
+                  <ion-input color="primary" [(ngModel)]="InfoCaissiere.password" name="mdpcaissiere" placeholder="Mot de passe caissière" type="password" id="mdp">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+        </ion-list>
+
+        <p  *ngIf="!aucuneCaissiere" text-center (click)="addNewCaissiere()" style="color: white; margin: 10px; padding: 5px; background-color: #993399; border-radius: 10px;"> Lier cette caisse à une nouvelle caissière</p>
+
+        <ion-row>
+          <ion-col class="item-center">
+                <!-- <ion-button color="light" fill="clear" shape="full" (click)="forgetForm()" >Mot de passe oublié</ion-button> -->
+              <ion-button *ngIf="!addCaiss || !casseId"  (click)="register()" shape="round"  color="primary" type="submit">Enregistrer</ion-button>
+              <ion-button *ngIf="addCaiss  && casseId" (click)="updateCaseWithNewCaissiere()" shape="round"  color="primary" type="submit">Metrre à jour</ion-button>
+          </ion-col>
+        </ion-row>
+
+    </form>
+</ion-content>

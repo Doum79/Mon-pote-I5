@@ -1,0 +1,50 @@
+ion-item {
+    --width: 100%;
+    margin: 0px;
+    padding: 0px
+ }
+
+ion-avatar{
+    background: #fff;
+    border: 2px solid rgb(23, 82, 28);
+ }
+
+ .image1{
+    background: #000 url(../../../assets/_107974801_01cfa05.jpg) no-repeat center center / cover;
+    width:100%; height:37vw 
+}
+
+.image2{
+    background: #000 url(../../../assets/money-shutterstock.jpg) no-repeat center center / cover;
+    width:100%; height:37vw 
+}
+
+.image3{
+    background: #000 url(../../../assets/_107974801_01cfa05.jpg) no-repeat center center / cover;
+    width:100%; height:37vw 
+}
+
+.row1{
+    // background-color: rgb(238, 238, 238);
+    background-color: rgb(252, 236, 255);
+}
+
+.row2{
+    background: rgb(255, 255, 255);
+    // border-top: 2px solid #000;
+}
+
+.bloc{
+    background-color: #993399;
+    height: 38vw;
+    border-radius: 20px;
+    margin: 2vw;
+    padding: 1vw;
+    max-width: 46vw;
+    box-shadow: 3px 4px 5px #792979;
+}
+
+.bloc.hydrated:active{
+    background-color: #5a265a;
+    color: rgb(161, 161, 161);
+}

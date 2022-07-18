@@ -1,0 +1,28 @@
+ion-content{
+    --background : #993399
+}
+
+ion-list{
+    background: transparent;
+    //border: 2px solid;
+    //border-radius: 2%;
+}
+
+ion-card{
+    border-radius: 30px;
+    margin-top: 25px;
+}
+
+ion-checkbox{
+    --size: 18px;
+}
+
+ion-content{
+    --color: #fff;
+    --background: #fff url(../../../assets/img/slide-2.jpg) no-repeat center center / cover;
+}
+
+.transparent{
+    --background-color: #ffffff;
+    opacity: 0.8;
+}

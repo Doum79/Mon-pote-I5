@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary" padding>
+      <ion-icon color="light" style="zoom: 2" name="arrow-back" slot="start" (click)="gotogerant()"></ion-icon>
+    <ion-title text-center>CAISSIERE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list padding >
+        <p *ngIf="!activeMisAJour"  class="item-center" style="color: grey; font-size: 20px">Creer une nouvelle caissière</p>
+        <p *ngIf="activeMisAJour" class="item-center" style="color: grey; font-size: 20px">Metter à jour votre caissière</p>
+        <ion-card>
+          <ion-item>
+              <ion-icon color="primary" name="person-add" slot="start"></ion-icon>
+            <ion-input color="primary" [(ngModel)]="InfoCaissiere.name" name="name" placeholder="Nom & prénom de la caissière" type="text" id="nom">
+            </ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card>
+          <ion-item>
+              <ion-icon color="primary" name="call" slot="start"></ion-icon>
+            <ion-input color="primary" [(ngModel)]="InfoCaissiere.phone" name="phone" placeholder="Contact caissière" type="tel" id="Contact">
+            </ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card>
+          <ion-item>
+              <ion-icon color="primary" name="ios-mail" slot="start"></ion-icon>
+            <ion-input color="primary" [(ngModel)]="InfoCaissiere.email" name="email" placeholder="Email caissière" type="email" id="email">
+            </ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card *ngIf="!activeMisAJour" >
+          <ion-item>
+              <ion-icon color="primary" name="md-keypad" slot="start"></ion-icon>
+            <ion-input color="primary" [(ngModel)]="InfoCaissiere.password" name="password" placeholder="Mot de passe caissière" type="password" id="mdp">
+            </ion-input>
+          </ion-item>
+        </ion-card>
+    </ion-list>
+
+    <ion-row>
+        <ion-col class="item-center">
+              <!-- <ion-button color="light" fill="clear" shape="full" (click)="forgetForm()" >Mot de passe oublié</ion-button> -->
+            <ion-button *ngIf="!activeMisAJour" (click)="createCaissiere()" shape="round"  color="primary" type="submit">Enregistrer</ion-button>
+            <ion-button *ngIf="activeMisAJour" (click)="updateCaissiere()" shape="round"  color="primary" type="submit">mettre à jour</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <p class="item-center" style="color: grey; font-size: 20px">Liste des caissières</p>
+
+      <ion-card *ngFor="let a of resultatGetCaissiere">
+        <ion-item>
+        <p> {{a.name}} </p> 
+            <ion-icon color="danger" name="trash" slot="end" (click)="alertSuppression(a.name, a.id)"></ion-icon>
+            <ion-icon color="success" name="create" slot="end" (click)="editeCaissiere(a)"></ion-icon>
+            <!-- <p style="font-size: 15px; color:gray">alimata@monpote.com</p>  -->
+        </ion-item>
+      </ion-card>
+
+    
+
+</ion-content>

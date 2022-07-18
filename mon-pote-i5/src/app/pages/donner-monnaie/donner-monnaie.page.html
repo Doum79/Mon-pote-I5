@@ -1,0 +1,46 @@
+
+<ion-content >
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button size="small" [routerLink]="['/home-marchand']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-row style="background-color: rgb(102, 247, 126)" [routerLink]="['/donner-monnaie']">
+      <ion-col>
+        <img src="../../assets/marchand/vector-business-people-and-bankers-with-money-illustration.jpg" alt="">
+      </ion-col>
+      <ion-col style="margin-top: 20px;     font-size: 34px; margin-top: 25px;">
+        Donner de la monnaie
+      </ion-col>
+    </ion-row>
+
+    <form>
+      <ion-list padding>
+        <ion-item margin>
+          <ion-label position="floating">Numéro de tel</ion-label>
+          <ion-input  type="tel" name="numero" [(ngModel)]="number">
+          </ion-input>
+        </ion-item>
+
+        <ion-item margin>
+          <ion-label position="floating">Montant</ion-label>
+          <ion-input  name="montant" type="number" [(ngModel)]="montant">
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-row class="signin" style="justify-content: center;">
+        <ion-button shape="round" fill="outline" (click)="transfAvoir(number, montant)" >VALIDER</ion-button>
+      </ion-row>
+    </form>
+
+
+    
+</ion-content>
+
+<ion-footer>
+  <div style="text-align: center;">
+      <img src="../../assets/ScantimeSrs.png" alt="" style="height: 178px;" (click)="qrscan()">
+  </div>
+</ion-footer>

@@ -1,0 +1,46 @@
+<ion-content>
+    <!-- <ion-row style="background-color: #993399; height: 17%;">
+      <ion-icon src="../../../assets/arrow.svg"  style="zoom: 3; margin-top: 3%;  margin-left: 13%;"></ion-icon>
+      <b style="margin-left: 5px; margin-top: 25px; font-size: 18px">Historique des transactions</b>  
+    </ion-row> -->
+  
+    <ion-card style="height: 17%;" *ngFor="let a of dataHistorique1">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon name="md-arrow-round-up" *ngIf="a.type =='DEBIT'" style="zoom: 3; margin-top: 27%; color: red; margin-left: 9%;"></ion-icon>
+          <ion-icon name="md-arrow-round-down" *ngIf="a.type =='CREDIT'" style="zoom: 3; margin-top: 27%; color: green; margin-left: 9%;"></ion-icon>
+        </ion-col>
+        <ion-col size="10" size-sm>
+            <p no-margin> <b>Motif: </b> {{a.description}}</p>
+            <p style="margin-top: 0.1"> <b>Montant: </b> {{a.account}} pts</p>
+            <p no-margin> <b>Date: </b> {{a.updated_at | date: "dd-MM-yyyy H:mm"}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card style="height: 17%;" *ngIf="dataHistorique1.length == 0">
+    
+      <ion-card-content style="text-align: center; font-size: large">
+        Aucune transaction effectuée
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-content>
+         
+  <ion-header style="background-color: #993399; height: 17%;">
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+          <ion-fab-button size="small" [routerLink]="['/home-marchand']">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      <ion-icon src="../../../assets/arrow.svg"  style="zoom: 3; margin-top: 4%;  margin-left: 13%;"></ion-icon>
+      <b style="margin-left: 5px; margin-top: 25px; font-size: 18px">Historique des transactions</b>  
+  </ion-header>
+
+  <ion-footer>
+    <ion-toolbar color="primary">
+     <p style="margin-left: 20px; color: black; height: 6px;"><b>Total Débit journalier:</b> {{total}} pts</p>
+     <p style="margin-left: 20px; color: black; height: 6px;"><b> Total Crédit journalier:</b> {{totalC}} pts</p>
+    </ion-toolbar>
+  </ion-footer>
+  

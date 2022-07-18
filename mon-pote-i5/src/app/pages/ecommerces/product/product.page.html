@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Produit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-slides pager="true" [options]="slideOpts" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+      <ion-slide>
+        <img src="{{product?.picture}}"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="{{product?.second_picture}}"/>
+      </ion-slide>
+    </ion-slides>
+      
+    <ion-card-header>
+      <ion-card-subtitle>Marque: {{product?.name}}</ion-card-subtitle>
+      <ion-card-subtitle>Catégorie: {{product?.gamme}}</ion-card-subtitle>
+      <ion-card-title>{{product?.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{product?.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer padding>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none" style="border: 1px solid #ef8f15;">
+          <ion-input type="number" [(ngModel)]="qte" autofocus="true" mode="ios" placeholder="Entrer quantité" min="1"></ion-input>
+          <ion-button fill="outline" slot="end">Prix: <s>{{(qte) ? (product?.price * qte).toFixed(2) : product?.price}} pts</s> <strong style="margin-left: 10px;">{{(qte) ? (product?.price_promo * qte).toFixed(2) : product?.price_promo}} pts</strong>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!-- <img class="trait" src="./assets/img/line_orange.png"> -->
+    <ion-button color="primary" shape="round" fill="outline" expand="full" (click)="addToCart(product)" >
+        <ion-icon name="cart" slot="end"></ion-icon>AJOUTER AU PANIER
+    </ion-button>
+  </ion-toolbar>
+
+ 
+</ion-footer>

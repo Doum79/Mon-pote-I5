@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Catégories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="!isLoading">
+    <ion-card *ngFor="let item of categories" (click)="selectItem(item)" class="ion-padding mt-2" no-margin>
+      <ion-row>
+        <ion-col>{{item.name}}</ion-col>
+        <ion-col class="ion-text-end ion-justify-content-end">
+          <img [src]="item.image" style="height:40px; width: 40px;">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card *ngIf="isNotResult">
+      <ion-card-content class="ion-text-center">
+        Aucune catégorie trouvé
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-grid *ngIf="isLoading">
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+    </ion-row>
+  </ion-grid>
+
+    <!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" (click)="goToBack()">
+          <ion-icon name="close"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
+</ion-content>

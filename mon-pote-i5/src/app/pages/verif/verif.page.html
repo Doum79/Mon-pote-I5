@@ -1,0 +1,40 @@
+
+<ion-content>
+
+    <ion-row padding>
+      <ion-col padding>
+        <!-- <ion-thumbnail slot="start"> -->
+          <ion-row style="justify-content: center">
+            <ion-img style="width: 120px; margin-top: 35px;" src="../../assets/icon/logo.png"></ion-img>
+          </ion-row>
+            
+        <!-- </ion-thumbnail> -->
+  
+        <form >
+  
+            <ion-list>
+              <h6 style="margin-left: 7%">Enter le code reçu par sms au <b style="color: white">{{number}}</b> </h6>
+              <ion-card class="transparent">
+                <ion-item class="transparent">
+                  <ion-icon color="primary" name="ios-eye" slot="start"></ion-icon>
+                  <ion-input class="transparent" color="primary" placeholder="Code de vérification" type="tel" id="code">
+                  </ion-input>
+                </ion-item>
+              </ion-card>
+            </ion-list>
+
+            <div class="ion-text-center">
+              <h6 >Si vous n'avez pas reçu <b style="color: blue;">Renvoyé</b> </h6>
+              <ion-button fill="outline"  shape="round"  color="light" (click)="gotToRegister()">Envoyer</ion-button>
+            </div>
+    
+        </form>
+    </ion-col>
+    </ion-row>
+    <!-- <div style="font-size: 13px; bottom: 16px; font-family: sans-serif; position: absolute; margin-left: 14%">
+      VOTRE MONNAIE DANS VOTRE SMARTPHONE
+    </div> -->
+  </ion-content>
+
+      
+  

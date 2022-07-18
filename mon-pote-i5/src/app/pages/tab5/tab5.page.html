@@ -1,0 +1,44 @@
+
+<ion-content>
+    <ion-row style="background-color: #993399; height: 37%; justify-content: center;">
+        <img src="../../assets/pp.png" width="205px" height="205px" style="border-radius:50%; margin-top: 5%;" alt="">
+        <!-- <ion-icon src="../../../assets/arrow.svg"  style="zoom: 3; margin-top: 4%;  margin-left: 13%;"></ion-icon>
+        <b style="margin-left: 5px; margin-top: 25px; font-size: 18px">Historique des transactions</b>   -->
+        <!-- <ion-icon name="md-person" style="zoom: 4;"></ion-icon> -->
+    </ion-row>
+
+    <form >
+
+        <ion-list padding>
+            <ion-item margin>
+                <ion-label position="floating">Nom et prénoms</ion-label>
+                <ion-input [(ngModel)]="user.name"  type="text" name="name">
+                </ion-input>
+            </ion-item>
+
+            <ion-item margin>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="user.email" name="email" type="email">
+                </ion-input>
+            </ion-item>
+
+            <ion-item margin>
+                <ion-label position="floating">Contact</ion-label>
+                <ion-input disabled="true" [(ngModel)]="user.phone" name="phone" type="tel">
+                </ion-input>
+            </ion-item>
+
+            <ion-item margin (click)="motdepasse()">
+                <ion-label style="text-align: center;">Changer mot de passe</ion-label>
+                <!-- <ion-input [(ngModel)]="user.password" type="password" name="pwd">
+                </ion-input> -->
+            </ion-item>
+
+        </ion-list>
+
+        <ion-row class="ion-justify-content-center">
+                <ion-button color="primary"  shape="round" fill="outline" type="submit" (click)="updateUser()">S'ENREGISTER</ion-button>
+        </ion-row>
+
+    </form>
+</ion-content>

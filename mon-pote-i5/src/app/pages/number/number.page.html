@@ -1,0 +1,61 @@
+
+<ion-content>
+   
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" [routerLink]="['/login']">
+          <ion-icon name="arrow-back" color="light"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <ion-row padding>
+        <ion-col padding>
+          <!-- <ion-thumbnail slot="start"> -->
+            <ion-row style="justify-content: center">
+              <ion-img style="width: 120px; margin-top: 35px;" src="../../assets/icon/logo.png"></ion-img>
+            </ion-row>
+              
+          <!-- </ion-thumbnail> -->
+    
+          <form style="margin-top: 33px">
+    
+              <ion-list>
+    
+                  <ion-card class="transparent">
+                    <ion-item class="transparent">
+                      <ion-icon color="primary" name="call" slot="start"></ion-icon>
+                      <ion-input class="transparent" color="primary" [(ngModel)]="number" name="number"  placeholder="Numéro" type="tel" id="number">
+                      </ion-input>
+                    </ion-item>
+                  </ion-card>
+    
+                
+              </ion-list>
+      
+              <div class="ion-text-center">
+                <ion-button fill="outline"  shape="round"  color="light" (click)="gottonumber()">Envoyer</ion-button>
+              </div>
+      
+          </form>
+      </ion-col>
+      </ion-row>
+
+      <!-- <ion-item class="bottom">
+        <strong text-center  style="color:rgb(255, 255, 255); height: 45px; font-size: 13px; bottom: 3px; font-family:sans-serif; margin: auto; margin-top: 15px;">VOTRE MONNAIS DANS VOTRE SMARTPHONE</strong>
+      </ion-item> -->
+      <!-- <div style="text-justify: center;
+      font-size: 13px;
+      bottom: 16px;
+      font-family: sans-serif;
+      position: fixed;">
+        sfjnqfeoqijfeoifhqioefjoqnefoiqjf eafahjeiofhbfeffoie
+      </div> -->
+
+      <!-- <div style="font-size: 13px; bottom: 16px; font-family: sans-serif; position: absolute; margin-left: 14%">
+        VOTRE MONNAIE DANS VOTRE SMARTPHONE
+      </div> -->
+      <!-- <ion-row class="ion-justify-content-center" style="bottom: 3px;">
+        <ion-text> VOTRE MONNAIE DANS VOTRE SMARTPHONE</ion-text>
+      </ion-row> -->
+      
+  </ion-content>
+  

@@ -1,0 +1,125 @@
+<ion-content>
+<p text-center style="color: blueviolet; font-size:20px"> 
+  <!-- <ion-icon color="primary" style="zoom: 1.2"  name="arrow-back" slot="start" (click)="gotogerant()"></ion-icon> -->
+  <b> HISTORIQUE CAISSE</b></p>
+<!-- <b text-center margin> <b>  CAISSE:  </b></p> -->
+
+<ion-row style="margin-top: -15px;">
+  <ion-col>
+  </ion-col>
+  <ion-col size="3" style="text-align: end;">
+    <ion-icon name="md-calendar" style="zoom: 1.4; margin-right: 3px;" (click)="dateSearch()"></ion-icon>
+    <ion-icon name="md-funnel" style="zoom: 1.4;" (click)="filtreDebitCredit()"></ion-icon>
+  </ion-col>
+</ion-row>
+
+<!-- <ion-row>
+  <ion-col>
+    <ion-searchbar placeholder="Recherche par date" (ionFocus)="focus()" *ngIf="!search"></ion-searchbar>
+  </ion-col>
+  <ion-col size="2">
+    <ion-item *ngIf="!search">
+      <ion-label>
+        <ion-icon name="md-funnel"></ion-icon>
+      </ion-label>
+      <ion-select interface="popover" [(ngModel)]="valueSelect" (ionChange)="getTransactionDEBIT(valueSelect)"  name="valueSel">
+        <ion-icon name="md-funnel"></ion-icon>
+        <ion-select-option value="DEBIT">Débit</ion-select-option>
+        <ion-select-option value="CREDIT">Crédit</ion-select-option>
+      </ion-select> 
+    </ion-item>
+  </ion-col>
+</ion-row> -->
+
+<!-- <div *ngIf="search" style="text-align: center">
+  <ion-item-group>
+    <ion-item>
+      <ion-label>Date début</ion-label>
+      <input color="primary" type="date" [(ngModel)]="date_debut" name="date_debut" placeholder="Date début" margin-right>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date fin</ion-label>
+      <input color="primary"  type="date" [(ngModel)]="date_fin" name="date_fin" placeholder="Date fin">
+    </ion-item>
+  </ion-item-group> -->
+
+  <!-- <ion-item *ngIf="resultatRecherche">
+    <ion-label>Trier le resultat par</ion-label>
+    <ion-select interface="popover" [(ngModel)]="valueSelect" (ionChange)="getTransactionTRIE(valueSelect)"  name="valueSel">
+      <ion-select-option value="DEBIT">Débit</ion-select-option>
+      <ion-select-option value="CREDIT">Crédit</ion-select-option>
+    </ion-select> 
+  </ion-item> -->
+
+<!-- <ion-button fill="outline" sharpe="around" margin (click)="rechercheTransactionParDAte() ">chercher</ion-button>
+</div> -->
+
+
+<div *ngIf="!resultatRecherche && !activeTrie">
+  <ion-card *ngFor="let a of resultatGetTransaction">
+    <ion-card-header>
+      <ion-card-title text-center>{{a.type}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> <b>  Montant:</b> {{a.account}} pts</p> 
+      <p> <b>  Date:</b> {{a.created_at}}</p> 
+      <p> <b>  Description:</b> {{a.description}}</p> 
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf="activeTrie">
+  <p style="text-align: center; font-size:15"><b> TRIER PAR {{param}} </b></p>
+  <ion-card *ngFor="let a of transactionDEBIT">
+    <ion-card-header>
+      <ion-card-title text-center>{{a.type}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> <b>  Montant:</b> {{a.account}} pts</p> 
+      <p> <b>  Date:</b> {{a.created_at}}</p> 
+      <p> <b>  Description:</b> {{a.description}}</p> 
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf="resultatRecherche">
+    <p style="text-align: center; font-size:15"><b> RESULTAT DE LA RECHERCHE </b></p>
+  <ion-card *ngFor="let a of resultat || az">
+    <ion-card-header>
+      <ion-card-title text-center>{{a.type}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> <b>  Montant:</b> {{a.account}} pts</p> 
+      <p> <b>  Date:</b> {{a.created_at}}</p> 
+      <p> <b>  Description:</b> {{a.description}}</p> 
+    </ion-card-content>
+  </ion-card>
+</div>
+<ion-card *ngIf="message">
+    <ion-card-content>
+      <p><b> {{message}} </b></p> 
+    </ion-card-content>
+  </ion-card>
+
+  <div class="bottom-bar">
+    <ion-label style="margin-left: 16px; color: black;"><b>Total Débit journalier:</b> {{total}} pts</ion-label>
+    <br>
+    <ion-label  style="margin-left: 16px; color: black"><b>Total Crédit journalier:</b> {{totalC}} pts</ion-label >
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+  <!-- <ion-toolbar color="primary">
+   <p style="margin-left: 20px; color: black;"><b>Total Débit journalier:</b> {{total}} pts</p>
+   <p style="margin-left: 20px; color: black"><b> Total Crédit journalier:</b> {{totalC}} pts</p>
+  </ion-toolbar> -->
+</ion-footer>
+
+
+<ion-fab vertical="top" horizontal="start" slot="fixed">
+  <ion-fab-button size="small" (click)="gotogerant()">
+    <ion-icon style="zoom: 1.2"  name="arrow-back"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

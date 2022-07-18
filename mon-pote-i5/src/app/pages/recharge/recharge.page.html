@@ -1,0 +1,31 @@
+<ion-content>
+    <ion-row style=" height: 100px; justify-content: center; padding: 40px;">
+      <ion-icon name="ios-phone-portrait" style="zoom: 3; margin-top: -5px;"></ion-icon>
+      <b style=" font-size: 16px">Achats de recharge tout réseau</b>  
+    </ion-row>
+    <ion-row style="background-color: black; color: white;" padding>
+      <b >Recharger votre compte pricipale <b style="color: orange">Orange</b>, <b style="color: yellow">MTN</b> et<b style="color: greenyellow"> Moov </b> </b> 
+    </ion-row>
+    <ion-row style="background-color:  #993399; padding: 3px; justify-content: center;">
+      <b style="font-size: 16px">Selectionner votre réseau</b>
+    </ion-row>
+    <div text-center padding style="margin-top: 10px;">
+      <ion-row class="ion-justify-content-center">
+        <img src="../../assets/logo orange.png" (click)="presentAlertPrompt('ORANGE')" alt="" height="120px%" width="120px%" margin>
+      </ion-row>
+      <hr class="hr">
+      <ion-row class="ion-justify-content-center">
+        <img src="../../assets/logo MTN.jpg" (click)="presentAlertPrompt('MTN')" alt="" height="120px%" width="120px%" margin>
+      </ion-row>
+      <hr  class="hr">
+      <ion-row class="ion-justify-content-center">
+        <img src="../../assets/logo moov ci.jpeg" (click)="presentAlertPrompt('MOOV')" alt="" height="120px%" width="120px%" margin>
+      </ion-row>
+    </div>
+
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button size="small" [routerLink]="['/choix']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

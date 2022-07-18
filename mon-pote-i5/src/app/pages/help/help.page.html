@@ -1,0 +1,57 @@
+<ion-content>
+
+    <ion-card class="header-tk">
+
+        <ion-card-content>
+            <ion-row padding>
+                <ion-col padding text-center>
+                    
+                      <h1>Support technique</h1>
+                      <br>
+                      <hr class="trai">
+                      <br>
+                      <h2>Avez-vous rencontré des difficultés sur MonPote?</h2>
+                      <h2>N'ésitez pas à nous écrire.</h2>
+                    
+                </ion-col>
+            </ion-row>
+           
+        </ion-card-content>
+    </ion-card>
+
+    <form  padding>
+
+        <ion-list padding>
+
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input  disabled [(ngModel)]="email" readonly name="email" type="email">
+                </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-textarea  name="message" rows="6" cols="20" placeholder="Votre message ici..."></ion-textarea>
+              </ion-item>
+
+        </ion-list>
+
+        <ion-row padding>
+            <ion-col padding>
+                <ion-button color="primary" shape="round" fill="outline" expand="full" type="submit">ENVOYER</ion-button>
+                <br>
+          <br>
+          
+            </ion-col>
+        </ion-row>
+
+    </form>
+
+
+
+
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button color="light" size="small" [routerLink]="['/tabs']">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
